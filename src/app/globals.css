@@ -43,6 +43,13 @@ button:hover {
   background-color: rgb(211, 35, 35);
 }
 
+.no{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size: 2rem;
+}
+
 /* _______________Navbar________________ */
 
 nav {

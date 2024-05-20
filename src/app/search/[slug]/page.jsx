@@ -2,7 +2,6 @@ import React from "react";
 import Card from "@/components/Card";
 import { getProjectByTitle } from "@/lib/actions";
 
-
 const Search = async ({ params: { slug } }) => {
   const tech = [
     "Html",
@@ -15,7 +14,7 @@ const Search = async ({ params: { slug } }) => {
     "MongoDB",
   ];
 
-  const projects = await getProjectByTitle(slug);
+  const projects = await getProjectByTitle(slug.trim());
 
   return (
     <>
@@ -32,10 +31,13 @@ const Search = async ({ params: { slug } }) => {
           </div>
         </div>
         <div className="lower_container">
-          {projects &&
+          {projects && projects.length > 0 ? (
             projects.map((project, index) => (
               <Card key={index} project={project} />
-            ))}
+            ))
+          ) : (
+            <p className="no">No projects found</p>
+          )}
         </div>
       </section>
     </>
