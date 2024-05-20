@@ -4,21 +4,36 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import Hamburger from "hamburger-react";
-// import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
+
+export const Searchbar = ({ searchTerm, setSearchTerm }) => {
+  const router = useRouter();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    router.push(`/search/${searchTerm}`);
+    setSearchTerm("");
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        className="nav_search"
+        type="search"
+        placeholder="Search products"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+    </form>
+  );
+};
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  // const router = useRouter();
 
   const handleToggle = () => {
     setToggle(!toggle);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // router.push(`/search/${searchTerm}`);
-    setSearchTerm("");
   };
 
   return (
@@ -42,15 +57,7 @@ const Navbar = () => {
           <Link href="/projects">Projects</Link>
         </li>
         <li>
-          <form onSubmit={handleSubmit}>
-            <input
-              className="nav_search"
-              type="search"
-              placeholder="Search products"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </form>
+          <Searchbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </li>
       </ul>
       <div className="ham" onClick={handleToggle}>
