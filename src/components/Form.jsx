@@ -43,7 +43,7 @@ export default function Form() {
     try {
       setLoading(true);
 
-      const data = await createProject({
+      const res = await createProject({
         title,
         description,
         image,
@@ -52,7 +52,7 @@ export default function Form() {
         techStack,
       });
 
-      if (data.success) toast.success(data.message);
+      if (res) toast.success(res.message);
     } catch (error) {
       toast.error(error.message);
     } finally {
