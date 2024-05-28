@@ -30,7 +30,7 @@ const Card = ({ project }) => {
             </span>
           ))}
         </div>
-        <Link href={`/projects/${project.title}`}>
+        <Link href={`/projects/${project._id}`}>
           <button className="card_btn">View</button>
         </Link>
       </div>
