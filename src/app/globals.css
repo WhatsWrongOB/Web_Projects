@@ -43,10 +43,10 @@ button:hover {
   background-color: rgb(211, 35, 35);
 }
 
-.no{
-  display:flex;
-  justify-content:center;
-  align-items:center;
+.no {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 2rem;
 }
 
@@ -149,7 +149,8 @@ main {
 .inner_rec ul li {
   margin-bottom: 10px;
   margin-right: 60px;
-  font-size: 1.01rem;
+  font-size: 1.1rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .icons {
@@ -186,6 +187,7 @@ hr {
   justify-content: space-between;
   align-items: center;
   color: black;
+  margin: 5px 0px;
 }
 
 .card_icon {
@@ -426,6 +428,7 @@ textarea {
 }
 
 .dash_container {
+  height: 90vh;
   width: 100%;
   display: flex;
 }
@@ -488,7 +491,6 @@ textarea {
 @media screen and (max-width: 1000px) {
   .dash_container {
     flex-direction: column;
-
     gap: 70px;
   }
 

@@ -21,7 +21,7 @@ const Card = ({ project }) => {
           <div className="heading">
             <h2>{project.title}</h2>
           </div>
-          <p>{project.description}</p>
+          {/* <p>{project.description}</p> */}
         </Link>
         <div className="stack">
           {project.techStack.map((item, i) => (
